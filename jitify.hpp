@@ -2257,6 +2257,7 @@ class Program {
   std::unique_ptr<Program_impl const> _impl;
 
  public:
+  Program(); //default constructor with no source assigned
   Program(JitCache& cache, std::string source,
           jitify::detail::vector<std::string> headers = 0,
           jitify::detail::vector<std::string> options = 0,
@@ -2343,6 +2344,9 @@ class JitCache {
     return Program(*this, source, headers, options, file_callback);
   }
 };
+
+
+inline Program::Program() {}
 
 inline Program::Program(JitCache& cache, std::string source,
                         jitify::detail::vector<std::string> headers,
