@@ -2272,6 +2272,10 @@ class Program {
    */
   inline Kernel kernel(std::string name,
                        jitify::detail::vector<std::string> options = 0) const {
+    if(! _impl){
+        throw std::runtime_error(
+        "Program_impl NULL; you have to set sources for this program using jitcache::program()");
+    }
     return Kernel(*this, name, options);
   }
   /*! Select a kernel.
@@ -2280,6 +2284,10 @@ class Program {
    */
   inline Kernel operator()(
       std::string name, jitify::detail::vector<std::string> options = 0) const {
+    if(! _impl){
+        throw std::runtime_error(
+        "Program_impl NULL; you have to set sources for this program using jitcache::program()");
+    }
     return this->kernel(name, options);
   }
 };
