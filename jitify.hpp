@@ -2556,10 +2556,22 @@ inline void Program_impl::load_sources(std::string source,
   _config->options = options;
 
   // Load program source
+//   std::cout << "DEBUG: program_impl load_sources from source " << source << std::endl;
   if (!detail::load_source(source, sources, "", include_paths, file_callback)) {
     throw std::runtime_error("Source not found: " + source);
   }
   name = sources.begin()->first;
+
+//   std::cout << "DEBUG: program_impl has sources " << std::endl;
+//   for ( const auto &myPair : sources ) {
+//         std::cout << "source filename" << myPair.first << "\n";
+//         // std::cout << "source 1" << myPair.second << "\n";
+//   }
+
+//   std::cout << "DEBUG: program_impl has nr include paths " << include_paths.size() << std::endl;
+//   for(int i=0; i<include_paths.size(); i++){
+//     std::cout << "DEBUG: program_impl has include path " << include_paths[i] << std::endl;
+//   }
 
   // Load header sources
   for (int i = 0; i < (int)headers.size(); ++i) {
