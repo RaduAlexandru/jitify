@@ -2574,9 +2574,9 @@ inline void Program_impl::load_sources(std::string source,
 //         // std::cout << "source 1" << myPair.second << "\n";
 //   }
 
-  std::cout << "DEBUG: program_impl has nr include paths " << include_paths.size() << std::endl;
+//   std::cout << "DEBUG: program_impl has nr include paths " << include_paths.size() << std::endl;
   for(int i=0; i<include_paths.size(); i++){
-    std::cout << "DEBUG: program_impl has include path " << include_paths[i] << std::endl;
+    // std::cout << "DEBUG: program_impl has include path " << include_paths[i] << std::endl;
   }
 
   // Load header sources
