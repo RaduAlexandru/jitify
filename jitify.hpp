@@ -2550,7 +2550,7 @@ inline void Program_impl::load_sources(std::string source,
 
         //sometimes the paths are divided by a ; 
         std::vector<std::string> tokens= detail::split_string(opt.substr(2) , -1, ";");
-        for(int i=0; i<tokens.size(); i++){
+        for(size_t i=0; i<tokens.size(); i++){
             include_paths.push_back(tokens[i]);
         }
                                              
@@ -2575,9 +2575,9 @@ inline void Program_impl::load_sources(std::string source,
 //   }
 
 //   std::cout << "DEBUG: program_impl has nr include paths " << include_paths.size() << std::endl;
-  for(int i=0; i<include_paths.size(); i++){
+//   for(int i=0; i<include_paths.size(); i++){
     // std::cout << "DEBUG: program_impl has include path " << include_paths[i] << std::endl;
-  }
+//   }
 
   // Load header sources
   for (int i = 0; i < (int)headers.size(); ++i) {
